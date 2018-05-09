@@ -30,8 +30,8 @@ def add_labels(img, labels, threhold = 0.1):
 test_tf_install()
 
 options = {
-  'model': 'cfg/tiny-yolo-voc.cfg',
-  'load': 'bin/tiny-yolo-voc.weights',
+  'model': 'cfg/yolov2-tiny-voc.cfg',
+  'load': 'weights/yolov2-tiny-voc.weights',
   'threshold': 0.3,
   'gpu': 1.0
 }

@@ -21,7 +21,7 @@ def process_image(image):
 
 
 def main():
-  game_title = 'king of the roQad'
+  game_title = 'king of the road'
   last_time = time.time()
 
   for image in  screen_reader.get_window_screen(game_title):
