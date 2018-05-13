@@ -2,6 +2,9 @@
 from PIL import ImageGrab
 import win32gui, win32com.client
 import numpy as np
+import cv2
+import os
+import time
 
 
 def get_window_screen(title):
@@ -34,3 +37,13 @@ def get_window_screen(title):
   while True:
     screen_image = np.array(ImageGrab.grab(bounded_box))
     yield screen_image
+
+
+def save_screenshot(image, directory='screenshots'):
+  if not os.path.exists(directory):
+    os.makedirs(directory)
+  file_name = 'screenshot_%0.f.png' % time.time()
+  file_path = os.path.join(directory, file_name)
+  cv2.imwrite(file_path, image)
+  print('Screenshot screenshot %s have been created' % file_path)
+
